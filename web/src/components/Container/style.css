@@ -1,0 +1,37 @@
+:root {
+  --dino-width: 250px;
+  --initial-dino-animate: 85px;
+  --diference-animate: 25px;
+  --min-animate: calc(var(--initial-dino-animate) - var(--diference-animate));
+  --max-animate: calc(var(--initial-dino-animate) + var(--diference-animate));
+}
+
+
+@keyframes example {
+  0% {
+    top: var(--min-animate);
+  }
+  25% {
+    top: var(--max-animate);
+  }
+  50% {
+    top: var(--min-animate);
+  }
+  75% {
+    top: var(--max-animate);
+  }
+  100% {
+    top: var(--min-animate);
+  }
+}
+
+#container-image #dino {
+  width: var(--dino-width);
+  left: calc((100% - var(--dino-width)) / 2);
+  position: absolute;
+  user-select: none;
+  animation-name: example;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  top: var(--min-animate);
+}
