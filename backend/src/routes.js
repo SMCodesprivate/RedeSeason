@@ -3,6 +3,7 @@ const { celebrate, Joi, Segments } = require('celebrate');
 
 const RoleController = require('./controllers/RoleController');
 const PostController = require('./controllers/PostController');
+const getPostId = require('./controllers/getPostId');
 
 const routes = express.Router();
 
@@ -22,6 +23,10 @@ routes.post('/post', celebrate({
 
 routes.get('/post', PostController.index);
 
-
+routes.get('/post/:id', celebrate({
+	[Segments.PARAMS]: Joi.object().keys({
+		id: Joi.required()
+	})
+}), getPostId.index);
 
 module.exports = routes;

@@ -8,7 +8,13 @@ export const GlobalStyle = createGlobalStyle`
 		box-sizing: border-box;
 	}
 
-	body {
+	html, body {
+		width: 100%;
+		height: 100%;
 		background: #fafafa;
+	}
+
+	a {
+		text-decoration: none;
 	}
 `;

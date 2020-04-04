@@ -1,5 +1,6 @@
 import React from 'react';
 import { FiHome, FiTriangle, FiBookOpen } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 import { ContainerMenu, ListCategories, CategoryItem, ListItens, MoreItens, Item } from './style.js';
 
@@ -7,10 +8,12 @@ export default function Menu() {
 	return (
 		<ContainerMenu>
 			<ListCategories>
-				<CategoryItem>
-					<FiHome size={24} color="#ffffff" />
-					Página principal
-				</CategoryItem>
+				<Link to="/">
+					<CategoryItem>
+						<FiHome size={24} color="#ffffff" />
+						Página principal
+					</CategoryItem>
+				</Link>
 				<MoreItens>
 					<CategoryItem rotate={180}>
 						Rankup Ocean

@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import JoditEditor from 'jodit-react';
 import { FiChevronRight } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 import { PostItem, Head, Background, TextContent, More } from '../style.js';
 
@@ -8,7 +9,7 @@ import avatarImg from '../../../assets/icon.gif';
 
 export default function Posts(props) {
 	const editor = useRef(null);
-	const [content, setContent] = useState(props.content);
+	const [content, setContent] = useState(props.item.content);
 
 	const config = {
 		readonly: true, // all options from https://xdsoft.net/jodit/doc/
@@ -37,12 +38,14 @@ export default function Posts(props) {
 					onChange={newContent => {}}
 				/>
 			</TextContent>
-			<More>
-				<p>
-					Ver mais sobre
-				</p>
-				<FiChevronRight size={28} color="#ff5e5e" />
-			</More>
+			<Link to={'/post/'+props.item._id}>
+				<More>
+					<p>
+						Ver mais sobre
+					</p>
+					<FiChevronRight size={28} color="#ff5e5e" />
+				</More>
+			</Link>
 		</PostItem>
 	);
 }

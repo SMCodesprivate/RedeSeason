@@ -13,8 +13,16 @@ const routes = require('./routes');
 
 const app = express();
 
+let requests = 0;
+
 app.use(cors());
 app.use(express.json());
+app.use((req, res, next) => {
+	console.time(`Request ${requests}`);
+	console.timeEnd(`Request ${requests}`);
+
+	return next();
+})
 app.use(routes);
 app.use(errors());
 

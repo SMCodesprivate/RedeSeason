@@ -24,7 +24,7 @@ export default function Posts() {
 				{(posts.length === 0) ? (
 					<h1>Nenhum post até o momento</h1>
 				) : posts.map(item => (
-					<Post key={item._id} content={item.content} />
+					<Post key={item._id} item={item} />
 				))}
 			</PostList>
 			<Discord src="https://discordapp.com/widget?id=690259514637025341&theme=dark" allowtransparency="true" frameborder="0"></Discord>
