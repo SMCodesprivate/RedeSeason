@@ -92,7 +92,7 @@ export const TextContent = styled.div`
 	margin: 75px 75px 50px 75px;
   word-wrap: break-word;
 	overflow: hidden;
-	max-height: 550px;
+	max-height: 500px;
   display: -webkit-box;
   -webkit-line-clamp: 15;
 	-webkit-box-orient: vertical;

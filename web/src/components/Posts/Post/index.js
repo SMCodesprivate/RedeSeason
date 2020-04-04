@@ -2,13 +2,13 @@ import React, { useState, useRef } from 'react';
 import JoditEditor from 'jodit-react';
 import { FiChevronRight } from 'react-icons/fi';
 
-import { PostList, PostItem, Head, Background, TextContent, More, Container, Discord } from '../style.js';
+import { PostItem, Head, Background, TextContent, More } from '../style.js';
 
 import avatarImg from '../../../assets/icon.gif';
 
-export default function Posts({ content }) {
+export default function Posts(props) {
 	const editor = useRef(null);
-	const [content, setContent] = useState('');
+	const [content, setContent] = useState(props.content);
 
 	const config = {
 		readonly: true, // all options from https://xdsoft.net/jodit/doc/
@@ -34,13 +34,13 @@ export default function Posts({ content }) {
 					config={config}
 					tabIndex={1} // tabIndex of textarea
 					onBlur={newContent => setContent(newContent)} // preferred to use only this option to update the content for performance reasons
-					onChange={newContent => { }}
+					onChange={newContent => {}}
 				/>
 			</TextContent>
 			<More>
 				<p>
 					Ver mais sobre
-							</p>
+				</p>
 				<FiChevronRight size={28} color="#ff5e5e" />
 			</More>
 		</PostItem>
